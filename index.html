@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#01011a">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Mady Travel</title>
+    <title>Document</title>
 </head>
 <body>
     <header class="myheader">
@@ -38,10 +40,12 @@
     <div class="main_section">
         <div id="slider">
             <img src="images/laptop.jpg" alt="Dame" id="slide" width="100%">
+            <div id="slide_white"></div>
         </div>
         <div class="Welcome_container">
             <div class="Welcome_box">
                 <div class="Welcome_text">
+                    <div class="blackround"></div>
                     <p><a href="" class="linke"> Need a</a></p>
                     <h1>Memorable Trip ? </h1>
                     <span>Give a try on our best travels rates across <br> the country. why not take a nap !</span>
@@ -56,9 +60,9 @@
 
             <div class="slider_indicators">
                 <ul  class="indicators">
-                    <li class="indicator1"></li>
-                    <li class="indicator2"></li>
-                    <li class="indicator3"></li>
+                    <li class="indicator1" onclick="changeimg1()" id="in1"></li>
+                    <li class="indicator" onclick="changeimg2()" id="in2"></li>
+                    <li class="indicator" onclick="changeimg3()" id="in3"></li>
                 </ul>
             </div>
             
@@ -71,9 +75,9 @@
             <div class="description_line">
                 <div class="line_cicle"></div>
             </div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br> Laudantium accusantium hic, neque ratione porro voluptates debitis maiores aperiam eaque quasi nostrum repellat corporis aliquam repellendus rem reiciendis beatae dolor tenetur.</p>
-
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.  Laudantium accusantium hic, neque ratione porro voluptates debitis maiores beatae dolor tenetur.</p>
             <div class="description_box_container">
+                    
                 <div class="description_box" id="box1">
                     <div class="description">
                         <div class="small_line"></div>
@@ -128,6 +132,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="description_box"></div>
     </div>
@@ -144,11 +149,11 @@
         </div>
     </div>
 
-
     <script src="https://kit.fontawesome.com/81039b1397.js" crossorigin="anonymous"></script>
 
     <script>
 
+    /*
         const cursor = document.querySelectorAll(".cursor");
         const links = document.querySelectorAll(".linke")
 
@@ -172,6 +177,8 @@
             })
 
         })
+        
+        */
 
         const icone = document.querySelector("#show");
         
@@ -187,8 +194,39 @@
             }
         }
 
-    /*
-        var slide = new Array("images/mousegrey.png", "images/Maddy travels sample@2x.png");
+        function changeimg1() {
+
+            document.getElementById("slide").src = "images/beach.jpg";
+            document.getElementById("slide_white").style.webkitAnimation = "chcolor 0.2s 2";
+            document.getElementById("slide_white").style.webkitAnimationFillMode ="forward";
+            document.getElementById("in1").className = "indicator1";
+            document.getElementById("in2").className = "indicator";
+            document.getElementById("in3").className = "indicator";
+        }
+        function changeimg2() {
+            document.getElementById("slide").src = "images/bedroom.jpg";
+            document.getElementById("slide_white").style.webkitAnimation = "chcolor 0.2s 2";
+            document.getElementById("slide_white").style.webkitAnimation = "chcolor 0.2s";
+            document.getElementById("in2").className = "indicator1";
+            document.getElementById("in1").className = "indicator";
+            document.getElementById("in3").className = "indicator";
+        }
+        function changeimg3() {
+            document.getElementById("slide").src = "images/livingroom.jpg";
+            document.getElementById("slide_white").style.webkitAnimation = "chcolor 0.2s 2";
+            document.getElementById("slide_white").style.webkitAnimation = "chcolor 0.2s";
+            document.getElementById("in3").className = "indicator1";
+            document.getElementById("in1").className = "indicator";
+            document.getElementById("in2").className = "indicator";
+        }
+
+    
+        
+
+
+        
+
+        var slide = new Array("images/beach.jpg", "images/bedroom.jpg", "images/livingroom.jpg", "images/laptop.jpg");
         var numero = 0;
         function changeslide(sens){
             numero = numero + sens;
@@ -197,10 +235,19 @@
             if(numero > slide.length - 1)
             numero = 0;
             document.getElementById("slide").src = slide[numero];
+            
         }
 
-        setInterval("changeslide(1)", 4000);
-        */
+       
+        setInterval(function(){
+            if (window.innerWidth < 600) {
+                changeslide(1);
+            }
+           
+        }, 4000);
+
+        
+
     </script>
 </body>
 </html>
