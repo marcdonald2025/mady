@@ -761,6 +761,9 @@ body i {
     position: absolute;
     top: 17%;
   }
+  .footer_section .foot p {
+    margin-bottom: 20px;
+  }
   .footer_section .foot button {
     display: block;
     width: 175px;
