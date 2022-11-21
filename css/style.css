@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
 body {
   font-family: "Poppins" sans-serif;
   font-family: "Poppins", sans-serif;
@@ -496,6 +500,9 @@ body i {
   color: grey;
   font-weight: 400;
   margin-bottom: 50px;
+}
+.description_section .description_box_container::-webkit-scrollbar {
+  width: 0px;
 }
 .description_section .description_box_container {
   display: -webkit-box;
