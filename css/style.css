@@ -108,12 +108,13 @@ body i {
     text-align: center;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    z-index: 5;
+    z-index: 200;
   }
   .navbar .links ul li {
     display: block;
     margin: 0 8px;
     line-height: 80px;
+    z-index: 300;
   }
   .navbar .address {
     left: 35%;
@@ -731,7 +732,7 @@ body i {
 @media (max-width: 820px) {
   .footer_section .foot {
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 10%;
   }
 }
@@ -742,10 +743,23 @@ body i {
     left: 10%;
   }
 }
+@media (max-width: 512px) {
+  .footer_section .foot {
+    position: absolute;
+    top: 20%;
+  }
+  .footer_section .foot button {
+    display: block;
+    width: 175px;
+  }
+  .footer_section .foot input {
+    display: block;
+  }
+}
 @media (max-width: 420px) {
   .footer_section .foot {
     position: absolute;
-    top: 16%;
+    top: 17%;
   }
   .footer_section .foot button {
     display: block;
