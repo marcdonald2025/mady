@@ -742,6 +742,9 @@ body i {
     top: 25%;
     left: 10%;
   }
+  .footer_section .foot p {
+    margin-bottom: 50px;
+  }
 }
 @media (max-width: 512px) {
   .footer_section .foot {
